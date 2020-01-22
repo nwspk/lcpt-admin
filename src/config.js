@@ -3,7 +3,7 @@ const config = {
         api: 'http://lcpt.local:12180'
     },
     production: {
-        api: 'http://lcpt.local:12180'
+        api: 'https://lcpt-api.herokuapp.com'
     }
 };
 
