@@ -14,7 +14,7 @@ const UserFilter = (props) => (
 
 
 export const UserList = props => (
-    <List {...props} title={<UserTitle />} filters={<UserFilter />}>
+    <List {...props} filters={<UserFilter />}>
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="name" />
@@ -46,22 +46,22 @@ export const UserEdit = props => (
                 <SelectInput optionText="name" />
             </ReferenceInput>
             <TextInput source="stripeSubId" />
+            <BooleanInput source="isAdmin" />
             <BooleanInput source="isMember" />
             <BooleanInput source="isFellow" />
             <DateInput source="receivedFellowshipAt" />
-            <DateInput source="createdAt" />
-            <DateInput source="updatedAt" />
         </SimpleForm>
     </Edit>
 );
 
 export const UserCreate = props => (
-    <Create {...props} title={<UserTitle />}>
+    <Create {...props}>
         <SimpleForm>
             <TextInput source="name" />
             <TextInput source="phoneNumber" />
             <TextInput source="email" />
             <TextInput multiline source="bio" />
+            <BooleanInput source="isAdmin" />
             <BooleanInput source="isMember" />
             <BooleanInput source="isFellow" />
         </SimpleForm>

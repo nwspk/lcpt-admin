@@ -9,6 +9,7 @@ export default {
                 phone, code
             });
             localStorage.setItem('user', JSON.stringify(user))
+            return Promise.resolve();
         } else {
             return Promise.reject();
         }
