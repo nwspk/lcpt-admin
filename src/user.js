@@ -37,7 +37,6 @@ export const UserList = props => (
 export const UserEdit = props => (
     <Edit {...props} title={<UserTitle />}>
         <SimpleForm>
-            <TextInput source="id" />
             <TextInput source="name" />
             <TextInput source="phoneNumber" />
             <TextInput source="email" />
