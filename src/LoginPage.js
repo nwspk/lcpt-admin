@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useLogin, useNotify } from 'react-admin';
 import { postJSON } from './http';
 import config from './config';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const LoginPage = ({ theme }) => {
     const [phone, setPhone] = useState('');
@@ -31,10 +33,16 @@ const LoginPage = ({ theme }) => {
                                 (stage === 'phone')
                                     ? <>
                                         <form onSubmit={submit}>
-                                            <label for='phone'>Phone Number (+447XXXXXXXX)</label>
+                                            <label for='phone'>Phone Number</label>
                                             <br />
                                             <br />
-                                            <input name="phone" id='phone' type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder='+447XXXXXXXX' />
+                                            <PhoneInput
+                                                name='phone'
+                                                id='phone'
+                                                defaultCountry='GB'
+                                                placeholder="Enter phone number"
+                                                value={phone}
+                                                onChange={setPhone} />
                                             <br />
                                             <br />
                                             <button>Next</button>
@@ -44,7 +52,7 @@ const LoginPage = ({ theme }) => {
                                             <label for='code'>Enter 6 digit code</label>
                                             <br />
                                             <br />
-                                            <input name="code" id='code' maxLength='6' type="text" value={code} onChange={e => setCode(e.target.value)} placeholder='X X X X X X' style={{textAlign:'center'}} />
+                                            <input name="code" id='code' maxLength='6' type="text" value={code} onChange={e => setCode(e.target.value)} placeholder='X X X X X X' style={{ textAlign: 'center' }} />
                                             <br />
                                             <br />
                                             <button>Login</button>
